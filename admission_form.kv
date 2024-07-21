@@ -1,0 +1,180 @@
+#: import admissions_form add_student.admissions_form
+
+MDScreen:
+    name : "admission_form"
+    md_bg_color : 1, 1, 1, 1
+
+    canvas:
+        Color:
+            rgb : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/blackter.jpg"
+
+    MDFloatLayout:
+        id : layout
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 0
+            size_hint : 1, .18
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .92}
+            MDFloatLayout:
+                FitImage:
+                    size_hint : .15, .65
+                    radius : [50]
+                    pos_hint : {"center_x" : .1, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .56, "center_y" : .5}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : 1, 1, 1, 1
+
+        MDFloatLayout:
+            MDLabel:
+                text : "Admission Form"
+                font_size : "30dp"
+                halign : "center"
+                pos_hint : {"center_x" : .5, "center_y" : .76}
+                theme_text_color: "Custom"
+                text_color: "orange"
+                font_name : "fonts/Poppins-Bold.ttf"
+            MDIconButton:
+                icon : "arrow-u-left-top-bold"
+                icon_size : "30dp"
+                pos_hint : {"center_x" : .1, "center_y" : .76}
+                theme_text_color : "Custom"
+                text_color : "white"
+                on_press : root.manager.current = "login"
+
+            MDTextField:
+                id : email
+                mode : "rectangle"
+                hint_text : "E-mail"
+                size_hint : .38, .08
+                font_size : "12sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .65}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Name"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .55}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Date of Birth"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .45}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Age"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .35}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Gender"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .25}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Contact"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .26, "center_y" : .15}
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Parent's Contact"
+                size_hint : .38, .08
+                font_size : "13sp"
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+                pos_hint : {"center_x" : .72, "center_y" : .65}
+
+            CheckBox:
+                id : check1
+                mode : "rectangle"
+                size_hint : .3, .1
+                line_color_normal : "orange"
+                pos_hint : {"center_x" : .55, "center_y" : .55}
+                disabled : True
+            MDRoundFlatButton:
+                text : "Xth Marksheet"
+                font_size : "13sp"
+                size_hint : .24, .06
+                pos_hint : {"center_x" : .73, "center_y" : .55}
+                on_press :
+                    check1.active = True
+                    check1.disabled = False
+
+            CheckBox:
+                id : check2
+                mode : "rectangle"
+                size_hint : .3, .1
+                line_color_normal : "orange"
+                disabled : True
+                pos_hint : {"center_x" : .55, "center_y" : .45}
+            MDRoundFlatButton:
+                text : "XIIth Marksheet"
+                font_size : "13sp"
+                size_hint : .24, .06
+                pos_hint : {"center_x" : .73, "center_y" : .45}
+                on_press :
+                    check2.active = True
+                    check2.disabled = False
+
+            CheckBox:
+                id : check3
+                size_hint : .3, .1
+                line_color_normal : "orange"
+                disabled : True
+                pos_hint : {"center_x" : .55, "center_y" : .35}
+            MDRoundFlatButton:
+                text : "Graduation \nMarksheet"
+                size_hint : .24, .06
+                pos_hint : {"center_x" : .73, "center_y" : .35}
+                on_press :
+                    check3.active = True
+                    check3.disabled = False
+
+            MDTextField:
+                mode : "rectangle"
+                hint_text : "Course"
+                size_hint : .38, .08
+                font_size : "13sp"
+                pos_hint : {"center_x" : .72, "center_y" : .25}
+                line_color_normal : "orange"
+                text_color_normal : "orange"
+                hint_text_color_normal : "orange"
+
+        MDRoundFlatButton:
+            text : "Download Form"
+            size_hint : .38, .075
+            pos_hint : {"center_x" : .705, "center_y" : .14}
+            on_press : admissions_form(app, email)

@@ -1,0 +1,260 @@
+#: import generate_id add_teacher.generate_id
+#: import send_mail add_teacher.send_mail
+
+MDScreen:
+    name : "teacher_icard"
+
+    MDFloatLayout:
+        id : card_front
+        md_bg_color : 133/255, 0, 0, 1
+        Carousel:
+            MDFloatLayout:
+                MDLabel:
+                    text : "Drangleic, Lothric"
+                    halign : "center"
+                    font_size : "18sp"
+                    pos_hint : {"center_y" : .95}
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+
+                FitImage:
+                    source : "images/log.png"
+                    size_hint : .24, .15
+                    pos_hint : {"center_x" : .155, "center_y" : .82}
+
+                MDLabel:
+                    text : "Adnan's Institute of \nWizardry"
+                    font_size : "30sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .59, "center_y" : .82}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "4650, NIBM Kondhwa \nPune 411048, Telephone: 8830802322"
+                    halign : "center"
+                    font_size : "15sp"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    pos_hint : {"center_x" : .5, "center_y" : .71}
+
+                MDLabel:
+                    text : "---------------------------------------"
+                    halign : "center"
+                    font_size : "23sp"
+                    pos_hint : {"center_x" : .5, "center_y" : .65}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                FitImage:
+                    source : "images/bar.jpg"
+                    pos_hint : {"center_x" : .18, "center_y" : .47}
+                    size_hint : .15, .28
+
+                FitImage:
+                    id : img
+                    source : "images/adnan.jpg"
+                    pos_hint : {"center_x" : .497, "center_y" : .472}
+                    size_hint : .36, .285
+
+                MDLabel:
+                    text : "T\nE\nA\nC\nH\nE\nR"
+                    halign : "center"
+                    font_size : "20sp"
+                    pos_hint : {"center_x" : .75, "center_y" : .47}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Name :"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .195, "center_y" : .29}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : name
+                    text : "Adnan"
+                    font_size : "20sp"
+                    pos_hint : {"center_x" : .835, "center_y" : .29}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+
+                MDLabel:
+                    text : "Class :"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .189, "center_y" : .24}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : classed
+                    text : "SYMCA"
+                    font_size : "20sp"
+                    pos_hint : {"center_x" : .835, "center_y" : .24}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+
+                MDLabel:
+                    text : "Position :"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .215, "center_y" : .19}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Faculty"
+                    font_size : "20sp"
+                    pos_hint : {"center_x" : .835, "center_y" : .19}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+
+
+                MDLabel:
+                    text : "Incharge Principal"
+                    halign : "center"
+                    font_size : "15sp"
+                    pos_hint : {"center_x" : .75, "center_y" : .05}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+
+                MDLabel:
+                    text : "Year 2022-2023"
+                    halign : "center"
+                    font_size : "20sp"
+                    pos_hint : {"center_x" : .83, "center_y" : .47}
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    canvas.before:
+                        Rotate:
+                            angle: 270
+                            origin: self.center
+
+            MDFloatLayout:
+                id : card_back
+                md_bg_color : 1, 1, 1, 1
+                MDLabel:
+                    text : "Local Address:"
+                    halign : "center"
+                    font_size : "20sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .218, "center_y" : .95}
+                MDLabel:
+                    id : address
+                    text : "B-206, Kohinoor Reina, near Prime Hospital, Pune - 411048"
+                    font_size : "16sp"
+                    size_hint : .4, None
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : .27, "center_y" : .88}
+
+                MDLabel:
+                    text : "Permanent Address:"
+                    halign : "center"
+                    font_size : "20sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .28, "center_y" : .77}
+                MDLabel:
+                    id : perm_address
+                    text : "B-206, Kohinoor Reina, near Prime Hospital, Pune - 411048"
+                    font_size : "16sp"
+                    size_hint : .4, None
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : .27, "center_y" : .7}
+
+                MDLabel:
+                    text : "Contact No:"
+                    halign : "center"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .18, "center_y" : .58}
+                MDLabel:
+                    id : contact
+                    text : "8830802322"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : 1, "center_y" : .58}
+
+                MDLabel:
+                    text : "Guardian Cell:"
+                    halign : "center"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .2, "center_y" : .52}
+                MDLabel:
+                    text : "NaN"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : 1, "center_y" : .52}
+
+                MDLabel:
+                    text : "Gender:"
+                    halign : "center"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .143, "center_y" : .46}
+                MDLabel:
+                    id : gender
+                    text : "Male"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : 1, "center_y" : .46}
+
+                MDLabel:
+                    text : "Date of Birth:"
+                    halign : "center"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .193, "center_y" : .4}
+                MDLabel:
+                    id : date_of_birth
+                    text : "24/12/2000"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : 1, "center_y" : .4}
+
+                MDLabel:
+                    text : "E-Mail ID:"
+                    halign : "center"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .161, "center_y" : .34}
+                MDLabel:
+                    id : email
+                    text : "adnansayyed1224@gmail.com"
+                    font_size : "17sp"
+                    font_name : "fonts/Poppins-SemiBold.ttf"
+                    pos_hint : {"center_x" : .85, "center_y" : .34}
+
+                MDLabel:
+                    text : "Instructions"
+                    font_size : "18sp"
+                    halign : "center"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    pos_hint : {"center_x" : .185, "center_y" : .27}
+
+                MDLabel:
+                    text : "1.  This card must be presented on demand. \n2.  Damage or loss of this card must be promptly \n     reported to the institute. \n3.  Validity for the academic year only."
+                    font_size : "16sp"
+                    pos_hint : {"center_x" : .555, "center_y" : .18}
+                    font_name : "fonts/Poppins-Regular.ttf"
+
+    MDRoundFlatButton:
+        text : "Proceed"
+        size_hint : .27, .06
+        md_bg_color : 0, 0, 0, 1
+        pos_hint : {"center_x" : .24, "center_y" : .07}
+        on_press :
+            generate_id(card_front, card_back)
+            send_mail(app)
+
+

@@ -1,0 +1,94 @@
+MDScreen:
+    name : "teachers_dashboard"
+
+    canvas.before:
+        Color:
+            rgb : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    MDCard:
+        md_bg_color : 133/255, 0, 0, 1
+        elevation: 5
+        size_hint : 1, .18
+        radius : [0, 0, 15, 15]
+        pos_hint : {"center_x" : .5, "center_y" : .92}
+        MDFloatLayout:
+            FitImage:
+                size_hint : .15, .65
+                radius : [50]
+                pos_hint : {"center_x" : .1, "center_y" : .5}
+                source : "images/log.png"
+            MDLabel:
+                text: "Adnan's Institute of WitchCraft"
+                halign : "center"
+                font_size : "22sp"
+                pos_hint : {"center_x" : .56, "center_y" : .5}
+                font_name : "fonts/Poppins-Bold.ttf"
+                theme_text_color : "Custom"
+                text_color : 1, 1, 1, 1
+
+    MDFloatLayout:
+        MDIconButton:
+            icon : "arrow-u-left-top-bold"
+            icon_size : "34dp"
+            pos_hint : {"center_x" : .12, "center_y" : .772}
+            on_press : root.manager.current = "login"
+        MDLabel:
+            text : "Teacher's Dashboard"
+            font_size : "23sp"
+            font_name : "fonts/Poppins-Bold.ttf"
+            halign : "center"
+            pos_hint : {"center_x" : .68, "center_y" : .77}
+
+        MDRoundFlatButton:
+            text : "Mark Attendance"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .67}
+            on_press : root.manager.current = "attendance"
+        MDRoundFlatButton:
+            text : "Add Student"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .57}
+            on_press : root.manager.current = "add_student"
+        MDRoundFlatButton:
+            text : "Make Time-Table"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .47}
+            on_press : root.manager.current = "time_table"
+        MDRoundFlatButton:
+            text : "Make Test-Paper"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .37}
+            on_press : root.manager.current = "exam"
+        MDRoundFlatButton:
+            text : "Add Books"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .27}
+            on_press : root.manager.current = "add_books"
+        MDRoundFlatButton:
+            text : "Appoint Teacher"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .17}
+            on_press : root.manager.current = "add_teacher"
+        MDRoundFlatButton:
+            text : "Homepage"
+            size_hint : .5, .08
+            md_bg_color : 133/255, 0, 0, .8
+            font_size : "15sp"
+            pos_hint : {"center_x" : .5, "center_y" : .07}
+            on_press : root.manager.current = "homepage"

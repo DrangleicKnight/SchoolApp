@@ -1,0 +1,217 @@
+#: import image_select add_student.image_select
+#: import date_picker popups.date_picker
+#: import dropup popups.dropup
+#: import course popups.course
+#: import validate add_student.validate
+
+MDScreen:
+    name : "add_student"
+    md_bg_color : 1, 1, 1, .15
+
+    canvas.before:
+        Color:
+            rgb : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    MDCard:
+        md_bg_color : 133/255, 0, 0, 1
+        elevation: 5
+        size_hint : 1, .18
+        radius : [0, 0, 15, 15]
+        pos_hint : {"center_x" : .5, "center_y" : .92}
+        MDFloatLayout:
+            FitImage:
+                size_hint : .15, .65
+                radius : [50]
+                pos_hint : {"center_x" : .1, "center_y" : .5}
+                source : "images/log.png"
+            MDLabel:
+                text: "Adnan's Institute of WitchCraft"
+                halign : "center"
+                font_size : "22sp"
+                pos_hint : {"center_x" : .56, "center_y" : .5}
+                font_name : "fonts/Poppins-Bold.ttf"
+                theme_text_color : "Custom"
+                text_color : 1, 1, 1, 1
+
+    MDIconButton:
+        icon : "arrow-u-left-top-bold"
+        icon_size : "20dp"
+        pos_hint : {"center_x" : .58, "center_y" : .77}
+        on_press : root.manager.current = "teachers_dashboard"
+    MDLabel:
+        text : "Add Student"
+        font_size : "20sp"
+        halign : "center"
+        pos_hint : {"center_x" : .75, "center_y" : .77}
+        font_name : "fonts/Poppins-Bold.ttf"
+
+    MDCard:
+        size_hint : .35, .2
+        pos_hint : {"center_x" : .73, "center_y" : .62}
+        md_bg_color : 0, 0, 0, .5
+        radius : [15]
+
+        MDRoundFlatButton:
+            size : self.parent.size
+            pos : self.pos
+            md_bg_color : "FFE79B"
+            on_press : image_select(app)
+
+            FitImage:
+                id : img
+                size: self.parent.size
+                pos : self.parent.pos
+                source : "images/icon.png"
+
+    MDTextField:
+        id : roll
+        mode : "rectangle"
+        hint_text : "Roll Number"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .76}
+        max_text_length : 3
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : name
+        mode : "rectangle"
+        hint_text : "Name"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .66}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+    MDTextField:
+        id : age
+        mode : "rectangle"
+        hint_text : "Age"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .56}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : email
+        mode : "rectangle"
+        hint_text : "E-Mail"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .46}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : contact
+        mode : "rectangle"
+        hint_text : "Contact"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .36}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : address
+        mode : "rectangle"
+        hint_text : "Address"
+        size_hint : .43, .17
+        pos_hint : {"center_x" : .275, "center_y" : .225}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+        multiline : True
+
+    MDTextField:
+        id : password
+        mode : "rectangle"
+        hint_text : "Password"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .275, "center_y" : .08}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : classed
+        mode : "rectangle"
+        hint_text : "Class"
+        size_hint : .33, .08
+        pos_hint : {"center_x" : .695, "center_y" : .46}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+        disabled : True
+    MDIconButton:
+        id : classbtn
+        icon : "book-education"
+        icon_size : "30dp"
+        pos_hint : {"center_x" : .92, "center_y" : .46}
+        on_press : course(app)
+
+    MDTextField:
+        id : parent_contact
+        mode : "rectangle"
+        hint_text : "Parent's Contact"
+        size_hint : .43, .08
+        pos_hint : {"center_x" : .745, "center_y" : .36}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+
+    MDTextField:
+        id : gender
+        mode : "rectangle"
+        hint_text : "Gender"
+        size_hint : .33, .08
+        pos_hint : {"center_x" : .695, "center_y" : .27}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+        disabled : True
+    MDIconButton:
+        id : genderbtn
+        icon : "arrow-down-circle"
+        icon_size : "30dp"
+        pos_hint : {"center_x" : .92, "center_y" : .27}
+        on_press : dropup(app)
+
+    MDTextField:
+        id : date_of_birth
+        mode : "rectangle"
+        hint_text : "Date of Birth"
+        size_hint : .33, .08
+        pos_hint : {"center_x" : .695, "center_y" : .18}
+        hint_text_color_normal : "black"
+        line_color_normal : "black"
+        text_color_focus : "black"
+        text_color_normal : "black"
+        disabled : True
+    MDIconButton:
+        icon : "form-dropdown"
+        icon_size : "30dp"
+        pos_hint : {"center_x" : .92, "center_y" : .18}
+        on_press : date_picker(app)
+
+    MDRaisedButton:
+        id : add
+        text : "Add Student"
+        size_hint : .4, .08
+        pos_hint : {"center_x" : .725, "center_y" : .075}
+        on_press : validate(app, roll, name, age, password, email, contact, address, classed, parent_contact, gender, date_of_birth, img)

@@ -1,0 +1,620 @@
+#: import time_table time_table.time_table
+#: import appoint_teachers time_table.appoint_teachers
+
+MDScreen:
+    name : "time_table"
+
+    canvas:
+        Color:
+            rgb : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/blackter.jpg"
+
+    GridLayout:
+        cols : 1
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 3
+            size_hint : 1, .18
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .92}
+            MDFloatLayout:
+                FitImage:
+                    size_hint : .15, .65
+                    radius : [50]
+                    pos_hint : {"center_x" : .1, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .56, "center_y" : .5}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : 1, 1, 1, 1
+
+        ScrollView:
+            do_scroll_x : False
+            do_scroll_y : True
+            MDFloatLayout:
+                size_hint : 1, None
+                height : "1000dp"
+                MDIconButton:
+                    icon : "arrow-u-left-top-bold"
+                    icon_size : "30dp"
+                    pos_hint : {"center_x" : .12, "center_y" : .925}
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    on_press : root.manager.current = "teachers_dashboard"
+                MDLabel:
+                    text : "Adnan's Institute of WitchCraft"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    halign : "center"
+                    pos_hint : {"center_x" : .53, "center_y" : .955}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDLabel:
+                    text : "MCA Department"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    halign : "center"
+                    pos_hint : {"center_x" : .53, "center_y" : .925}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDLabel:
+                    text : "Time Table MCA II"
+                    font_size : "18sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    halign : "center"
+                    pos_hint : {"center_x" : .53, "center_y" : .895}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+
+                MDCard:
+                    size_hint : .94, .45
+                    md_bg_color : 1, 1, 1, .8
+                    elevation : 2
+                    pos_hint : {"center_x" : .5, "center_y" : .64}
+                    ScrollView:
+                        do_scroll_x : True
+                        do_scroll_y : False
+                        GridLayout:
+                            cols : 9
+                            rows : 7
+                            padding : [10, 0]
+                            size_hint : None, None
+                            width : "900dp"
+                            height : "410dp"
+                            MDLabel:
+                                text : "Day"
+                                font_size : "18sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "9:00 - 10:00"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "10:00 - 11:00"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "11:00 - 11:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "11:15 - 12:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "12:15 - 1:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "1:15 - 2:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "2:15 - 3:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "3:15 - 4:15"
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+
+                            MDLabel:
+                                text : "Monday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : monday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                theme_text_color : "Custom"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                                font_size : "15sp"
+                            MDTextField:
+                                id : monday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : monday3
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : monday4
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : monday5
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : monday6
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "Tuesday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : tuesday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : tuesday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : tuesday3
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : tuesday4
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : tuesday5
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : tuesday6
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "Wednesday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : wednesday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : wednesday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : wednesday3
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : wednesday4
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : wednesday5
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : wednesday6
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "Thursday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : thursday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : thursday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : thursday3
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : thursday4
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : thursday5
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : thursday6
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "Friday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : friday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : friday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : friday3
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : friday4
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            Button:
+                                text : "Break"
+                                background_color : 254/255, 0, 0, 1
+                                size_hint : 1, .1
+                            MDTextField:
+                                id : friday5
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : friday6
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "Saturday"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : saturday1
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+                            MDTextField:
+                                id : saturday2
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "15sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                MDLabel:
+                    text : "Subject Faculty"
+                    font_size : "18sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .2, "center_y" : .37}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+
+                MDCard:
+                    size_hint : .94, .23
+                    md_bg_color : 1, 1, 1, .8
+                    pos_hint : {"center_x" : .5, "center_y" : .22}
+                    elevation : 2
+                    padding : [5, 5]
+                    ScrollView:
+                        do_scroll_y : True
+                        do_scroll_x : True
+                        GridLayout:
+                            cols : 3
+                            rows : 6
+                            size_hint : None, None
+                            width : "500dp"
+                            height : "350dp"
+                            MDLabel:
+                                text : "Subject Code"
+                                font_size : "16sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "Subject Name"
+                                font_size : "16sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+                            MDLabel:
+                                text : "Subject Teacher"
+                                font_size : "16sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                halign : "center"
+
+                            MDLabel:
+                                text : "IT21"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "Python"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : python_teacher
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "14sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "IT22"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "DevOps"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : devops_teacher
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "14sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "IT23"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "Operating System"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : os_teacher
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "14sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "IT24"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "Android"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : android_teacher
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "14sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+                            MDLabel:
+                                text : "IT25"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDLabel:
+                                text : "Mini Project"
+                                font_size : "12sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                            MDTextField:
+                                id : project_teacher
+                                mode : "rectangle"
+                                size_hint : 1, .1
+                                font_size : "14sp"
+                                text_color_normal : "black"
+                                line_color_normal : "black"
+                                text_color_focus : "black"
+
+
+                MDRoundFlatButton:
+                    size_hint : .4, .05
+                    md_bg_color : 133/255, 0, 0, 1
+                    text : "Make TimeTable"
+                    font_size : "14sp"
+                    pos_hint : {"center_x" : .25, "center_y" : .05}
+                    on_press : time_table(monday1, monday2, monday3, monday4, monday5, monday6, tuesday1, tuesday2, tuesday3, tuesday4, tuesday5, tuesday6, wednesday1, wednesday2, wednesday3, wednesday4, wednesday5, wednesday6, thursday1, thursday2, thursday3, thursday4, thursday5, thursday6, friday1, friday2, friday3, friday4, friday5, friday6, saturday1, saturday2)
+
+                MDRoundFlatButton:
+                    size_hint : .4, .05
+                    md_bg_color : 133/255, 0, 0, 1
+                    text : "Appoint Teachers"
+                    font_size : "14sp"
+                    pos_hint : {"center_x" : .75, "center_y" : .05}
+                    on_press : appoint_teachers(python_teacher, devops_teacher, os_teacher, android_teacher, project_teacher)

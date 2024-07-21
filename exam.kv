@@ -1,0 +1,218 @@
+#: import add_card exam.add_card
+#: import remove_card exam.remove_card
+
+MDScreen:
+    name : "exam"
+
+    canvas:
+        Color:
+            rgb : (1, 1, 1, 1)
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    GridLayout:
+        cols : 1
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 2
+            size_hint : 1, None
+            height : "180dp"
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .8}
+            MDFloatLayout:
+                MDIconButton:
+                    icon : "arrow-u-left-top-bold"
+                    icon_size : "25dp"
+                    pos_hint : {"center_x" : .07, "center_y" : .5}
+                    on_press : root.manager.current = "teachers_dashboard"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                FitImage:
+                    size_hint : .14, .38
+                    radius : [50]
+                    pos_hint : {"center_x" : .17, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "21sp"
+                    pos_hint : {"center_x" : .56, "center_y" : .79}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDLabel:
+                    text : "SYMCA : 2021-2023"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .59}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDLabel:
+                    text : "Subject :"
+                    font_size : "20sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .38, "center_y" : .38}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDTextField:
+                    id : sub_name
+                    size_hint : .3, .37
+                    font_size : "14sp"
+                    pos_hint : {"center_x" : .64, "center_y" : .39}
+                    text_color_normal : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Marks :"
+                    font_size : "15sp"
+                    pos_hint : {"center_x" : .85, "center_y" : .15}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                MDTextField:
+                    id : marks
+                    size_hint : .1, .37
+                    font_size : "14sp"
+                    pos_hint : {"center_x" : .53, "center_y" : .17}
+                    text_color_normal : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+        ScrollView:
+            do_scroll_x : False
+            do_scroll_y : True
+            GridLayout:
+                id : grid
+                cols : 1
+                size_hint : 1, None
+                height : sum(child.height for child in self.children) * 1.2
+                spacing : [0, 25]
+                padding : [20, 10]
+                MDFloatLayout:
+                    size_hint : 1, None
+                    height : "200dp"
+                    pos_hint : {"center_x" : .5, "center_y" : .6}
+                    MDLabel:
+                        text : "Roll No:"
+                        halign : "center"
+                        pos_hint : {"center_x" : .12, "center_y" : .8}
+                        font_size : "18sp"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                    MDTextField:
+                        mode : "rectangle"
+                        size_hint : .23, .23
+                        font_size : "12sp"
+                        pos_hint : {"center_x" : .35, "center_y" : .8}
+                        text_color_normal : "orange"
+                    MDLabel:
+                        text : "Name:"
+                        halign : "center"
+                        pos_hint : {"center_x" : .115, "center_y" : .5}
+                        font_size : "18sp"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                    MDTextField:
+                        mode : "rectangle"
+                        size_hint : .43, .23
+                        font_size : "12sp"
+                        pos_hint : {"center_x" : .45, "center_y" : .5}
+                        text_color_normal : "orange"
+                    MDLabel:
+                        text : "E-mail:"
+                        halign : "center"
+                        pos_hint : {"center_x" : .123, "center_y" : .2}
+                        font_size : "18sp"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                    MDTextField:
+                        mode : "rectangle"
+                        size_hint : .43, .23
+                        font_size : "12sp"
+                        pos_hint : {"center_x" : .45, "center_y" : .2}
+
+                MDCard:
+                    size_hint : .7, None
+                    height : "250dp"
+                    elevation : 0
+                    radius : [20]
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "Q1 - This is a dummy question to help you understand how questions will appear"
+                            size_hint : .88, 1
+                            font_size : "15sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            pos_hint : {"center_x" : .49, "center_y" : .87}
+                        MDCheckbox
+                            group : "group"
+                            size_hint : .1, .1
+                            pos_hint : {"center_x" : .08, "center_y" : .65}
+                        MDLabel:
+                            text : "You're so great, Adnan Sayyed!"
+                            size_hint : .5, 1
+                            font_size : "14sp"
+                            font_name : "fonts/Poppins-Regular.ttf"
+                            pos_hint : {"center_x" : .4, "center_y" : .65}
+
+                        MDCheckbox:
+                            group : "group"
+                            size_hint : .1, .1
+                            pos_hint : {"center_x" : .08, "center_y" : .5}
+                        MDLabel:
+                            text : "Let's watch Pokemon"
+                            size_hint : .5, 1
+                            font_size : "14sp"
+                            font_name : "fonts/Poppins-Regular.ttf"
+                            pos_hint : {"center_x" : .4, "center_y" : .5}
+
+                        MDCheckbox:
+                            group : "group"
+                            size_hint : .1, .1
+                            pos_hint : {"center_x" : .08, "center_y" : .35}
+                        MDLabel:
+                            text : "Wanna get Married?"
+                            size_hint : .5, 1
+                            font_size : "14sp"
+                            font_name : "fonts/Poppins-Regular.ttf"
+                            pos_hint : {"center_x" : .4, "center_y" : .35}
+
+                        MDCheckbox:
+                            group : "group"
+                            size_hint : .1, .1
+                            pos_hint : {"center_x" : .08, "center_y" : .2}
+                        MDLabel:
+                            text : "I have commited multiple murders"
+                            size_hint : .5, 1
+                            font_size : "14sp"
+                            font_name : "fonts/Poppins-Regular.ttf"
+                            pos_hint : {"center_x" : .4, "center_y" : .2}
+
+                        MDLabel:
+                            text : "Marks :"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            pos_hint : {"center_x" : 1.28, "center_y" : .15}
+                        MDLabel:
+                            text : "2"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            pos_hint : {"center_x" : 1.39, "center_y" : .15}
+
+
+    MDCard:
+        md_bg_color : "orange"
+        size_hint : .15, .04
+        pos_hint : {"center_x" : .85, "center_y" : .75}
+        elevation : 2
+        radius : [0, 0, 10, 10]
+        GridLayout:
+            rows : 1
+            MDFloatLayout:
+                MDIconButton:
+                    icon : "arrow-up-bold"
+                    on_press : add_card(app)
+                    pos_hint : {"center_x" : .55, "center_y" : .65}
+            MDFloatLayout:
+                MDIconButton:
+                    icon : "arrow-down-bold"
+                    on_press : remove_card(app)
+                    pos_hint : {"center_x" : .5, "center_y" : .64}

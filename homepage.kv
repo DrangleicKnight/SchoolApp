@@ -1,0 +1,356 @@
+#: import add_about_card homepage.add_about_card
+
+MDScreen:
+    name : "homepage"
+
+    canvas.before:
+        Color:
+            rgb : 1, 1, 1, .9
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    GridLayout:
+        cols : 1
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 5
+            size_hint : 1, .2
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .8}
+            MDFloatLayout:
+                FitImage:
+                    size_hint : .15, .65
+                    radius : [50]
+                    pos_hint : {"center_x" : .1, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .56, "center_y" : .5}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+        MDCard:
+            md_bg_color : 0, 0, 0, .5
+            size_hint : 1, .08
+            ScrollView:
+                id : scrollside
+                do_scroll_x : True
+                do_scroll_y : False
+                GridLayout:
+                    rows : 1
+                    size_hint : None, 1
+                    width : scrollside.width * 1.1
+                    padding : [20, 5, 0, 0]
+                    spacing : 20
+                    MDFlatButton:
+                        text : "About Us"
+                        theme_text_color : "Custom"
+                        text_color : "orange"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                        on_press : add_about_card(app)
+                    MDFlatButton:
+                        text : "Programs"
+                        theme_text_color : "Custom"
+                        text_color : "orange"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                    MDFlatButton:
+                        text : "Student's Hub"
+                        theme_text_color : "Custom"
+                        text_color : "orange"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                        on_press : root.manager.current = "students_hub"
+                    MDFlatButton:
+                        text : "Library"
+                        theme_text_color : "Custom"
+                        text_color : "orange"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                        on_press : root.manager.current = "library"
+                    MDFlatButton:
+                        text : "Log Out"
+                        theme_text_color : "Custom"
+                        text_color : "orange"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                        on_press : root.manager.current = "login"
+
+        ScrollView:
+            id : scroll
+            do_scroll_x : False
+            do_scroll_y : True
+
+            GridLayout:
+                cols : 1
+                size_hint : 1, None
+                height : scroll.height * 3.3
+
+                Carousel:
+                    id : caroused
+                    size_hint: 1, .25
+                    loop : True
+                    MDFloatLayout:
+                        FitImage:
+                            size: self.size
+                            pos: self.pos
+                            source: "images/image2.jpg"
+                    MDFloatLayout:
+                        FitImage:
+                            size: self.size
+                            pos: self.pos
+                            source: "images/image4.jpg"
+                    MDFloatLayout:
+                        FitImage:
+                            size: self.size
+                            pos: self.pos
+                            source: "images/image5.jpeg"
+
+                MDFloatLayout:
+                    MDCard:
+                        md_bg_color : 1, 1, 1, .8
+                        size_hint : .46, .18
+                        pos_hint : {"center_x" : .26, "center_y" : .97}
+                        ScrollView:
+                            id : scard
+                            do_scroll_x : False
+                            do_scroll_y : True
+                            loop : True
+                            MDFloatLayout:
+                                size_hint : 1, None
+                                height : scard.height * 1.2
+                                MDRoundFlatButton:
+                                    text : "Admission"
+                                    font_name : "fonts/Poppins-SemiBold.ttf"
+                                    md_bg_color : 133/255, 0, 0, .9
+                                    size_hint : .85, .2
+                                    pos_hint : {"center_x" : .5, "center_y" : .82}
+                                    on_press : root.manager.current = "admission_form"
+                                MDLabel:
+                                    text : "Dark Arts - Registration\nAdnan's University of WitchCraft"
+                                    font_size : "12sp"
+                                    pos_hint : {"center_x" : .55, "center_y" : .57}
+                                    font_name : "fonts/Poppins-SemiBold.ttf"
+                                MDLabel:
+                                    text : "Quidditch - Registration\nAdnan's University of WitchCraft"
+                                    font_size : "12sp"
+                                    pos_hint : {"center_x" : .55, "center_y" : .3}
+                                    font_name : "fonts/Poppins-SemiBold.ttf"
+
+                    MDCard:
+                        md_bg_color : 1, 1, 1, .8
+                        size_hint : .46, .18
+                        pos_hint : {"center_x" : .74, "center_y" : .97}
+                        ScrollView:
+                            id : scard2
+                            do_scroll_x : False
+                            do_scroll_y : True
+                            MDFloatLayout:
+                                size_hint : 1, None
+                                height : scard2.height * 1.2
+                                MDRoundFlatButton:
+                                    text : "Classroom"
+                                    font_name : "fonts/Poppins-SemiBold.ttf"
+                                    md_bg_color : 133/255, 0, 0, .9
+                                    size_hint : .85, .2
+                                    pos_hint : {"center_x" : .5, "center_y" : .82}
+                                    on_press : root.manager.current = "classroom"
+                                MDLabel:
+                                    text : "Check out all the people with you in your classroom. See all the assignments pending"
+                                    font_size : "12sp"
+                                    size_hint : .8, 1
+                                    font_name : "fonts/Poppins-SemiBold.ttf"
+                                    pos_hint : {"center_x" : .5, "center_y" : .5}
+
+                MDFloatLayout:
+                    size_hint : 1, None
+                    height : lab.texture_size[1]
+                    MDLabel:
+                        id : lab
+                        text : "About our Institute"
+                        font_size : "25sp"
+                        font_name : "fonts/Poppins-Bold.ttf"
+                        halign : "center"
+                        pos_hint : {"center_x" : .5, "center_y" : 31.2}
+                    MDCard:
+                        size_hint : .95, 12
+                        pos_hint : {"center_x" : .5, "center_y" : 24.2}
+                        radius : [20]
+                        md_bg_color : 133/255, 0, 0, .9
+                        MDFloatLayout:
+                            MDLabel:
+                                text : "Adnan's School of Wizardry and WitchCraft was founded in 2023 at Kohinoor Reina , by Adnan Sayyed, in the comfort of his couch. \nThe reason for the creation of this Institute is to teach students about the benefits of being based and to inculcate values in them that will help them in securing good grades"
+                                font_size : "13sp"
+                                pos_hint : {"center_x" : .5, "center_y" : .83}
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                theme_text_color : "Custom"
+                                text_color : "orange"
+                                size_hint : .9, 1
+                            Video:
+                                size_hint : .95, 1
+                                pos_hint : {"center_x" : .5, "center_y" : .36}
+                                state : "play"
+                                options : {'eos' : "loop"}
+                                source : "images/allana.mp4"
+
+                MDFloatLayout:
+                    size_hint : 1, None
+                    height : lab2.texture_size[1]
+                    MDLabel:
+                        id : lab2
+                        text : "Arts taught at this Institute"
+                        font_size : "25sp"
+                        font_name : "fonts/Poppins-Bold.ttf"
+                        halign : "center"
+                        pos_hint : {"center_x" : .5, "center_y" : 18.2}
+                    MDCard:
+                        size_hint : .45, 8.8
+                        pos_hint : {"center_x" : .26, "center_y" : 12.7}
+                        MDFloatLayout:
+                            FitImage:
+                                radius : [50]
+                                size_hint : .8, .3
+                                pos_hint : {"center_x" : .5, "center_y" : .82}
+                                source : "images/quidd.jpg"
+                            MDLabel:
+                                text : "The mighty sport of quidditch can be mastered at our institiute\n Along with learning the dark arts, students at our institute become full-fledged beasts at quidditch"
+                                size_hint : .9, 1
+                                font_size : "12sp"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                pos_hint : {"center_x" : .5, "center_y" : .4}
+                    MDCard:
+                        size_hint : .45, 8.8
+                        pos_hint : {"center_x" : .74, "center_y" : 12.7}
+                        MDFloatLayout:
+                            MDLabel:
+                                text : "Toppers of AIW"
+                                font_size : "17sp"
+                                halign : "center"
+                                font_name : "fonts/Poppins-Bold.ttf"
+                                pos_hint : {"center_x" : .5, "center_y" : .92}
+                            FitImage:
+                                radius : [50]
+                                size_hint : .4, .2
+                                pos_hint : {"center_x" : .5, "center_y" : .785}
+                                source : "images/tr.jpg"
+                            MDCard:
+                                size_hint : .7, .6
+                                pos_hint : {"center_x" : .5, "center_y" : .36}
+                                elevation : 4
+                                Carousel:
+                                    id : caroused2
+                                    loop : True
+                                    MDFloatLayout:
+                                        FitImage:
+                                            source : "images/students/toppers/Adnan Sayyed.png"
+                                    MDFloatLayout:
+                                        FitImage:
+                                            source : "images/students/toppers/Mahewish Pathan.png"
+                                    MDFloatLayout:
+                                        FitImage:
+                                            source : "images/students/toppers/Ulfah Peerzade.png"
+
+                MDFloatLayout:
+                    size_hint : 1, None
+                    height : lab3.texture_size[1]
+                    MDLabel:
+                        id : lab3
+                        text : "Message from the founder"
+                        font_size : "25sp"
+                        font_name : "fonts/Poppins-Bold.ttf"
+                        halign : "center"
+                        pos_hint : {"center_x" : .5, "center_y" : 8.2}
+                    MDCard:
+                        size_hint : .95, 6.3
+                        pos_hint : {"center_x" : .5, "center_y" : 4}
+                        radius : [120, 0, 120, 120]
+                        md_bg_color : 133/255, 0, 0, .9
+                        MDFloatLayout:
+                            FitImage:
+                                size_hint : .4, .88
+                                pos_hint : {"center_x" : .23, "center_y" : .5}
+                                radius : [120]
+                                source : "images/founder.jpeg"
+                            MDLabel:
+                                text : "Even though this is just a project right now, I definitely see something like this being used in schools and colleges, because come on, this shit is so cool. Still a lot of things to implement though, which I will. Btw, America deserved 9/11"
+                                font_size : "14sp"
+                                size_hint : .51, 1
+                                theme_text_color : "Custom"
+                                text_color : "orange"
+                                font_name : "fonts/Poppins-SemiBold.ttf"
+                                pos_hint : {"center_x" : .7, "center_y" : .51}
+
+                MDCard:
+                    size_hint : 1, .2
+                    pos_hint : {"center_x" : .5, "center_y" : .2}
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "Find Us"
+                            font_size : "20sp"
+                            halign : "center"
+                            pos_hint : {"center_x" : .11, "center_y" : .77}
+                            font_name : "fonts/Poppins-Bold.ttf"
+
+                        MDLabel:
+                            text : "Call/Whatsapp: 8830802322"
+                            pos_hint : {"center_x" : .54, "center_y" : .62}
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            font_size : "12sp"
+                        MDLabel:
+                            text : "Prof. Adnan Sayyed: 7276937361"
+                            pos_hint : {"center_x" : .54, "center_y" : .52}
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            font_size : "12sp"
+                        MDLabel:
+                            text : "E-mail : adnansayyed1224@gmail.com"
+                            pos_hint : {"center_x" : .54, "center_y" : .42}
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            font_size : "12sp"
+                        MDLabel:
+                            text : "Address : Kohinoor Reina, NIBM, \nKondhwa, Pune - 411048"
+                            pos_hint : {"center_x" : .54, "center_y" : .28}
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            font_size : "12sp"
+                        MDCard:
+                            size_hint : .38, .74
+                            pos_hint : {"center_x" : .76, "center_y" : .5}
+                            elevation : 4
+
+
+                MDCard:
+                    size_hint : 1, .08
+                    pos_hint : {"center_x" : .5, "center_y" : .2}
+                    radius : [0]
+                    md_bg_color : 0, 0, 0, 1
+                    MDFloatLayout:
+                        MDIconButton:
+                            icon : "copyright"
+                            icon_size : "35dp"
+                            pos_hint : {"center_x" : .25, "center_y" : .5}
+                            theme_text_color : "Custom"
+                            text_color : 1, 1, 1, 1
+                        MDLabel:
+                            text : "An app by Adnan"
+                            font_size : "25sp"
+                            halign : "center"
+                            theme_text_color : "Custom"
+                            text_color : 1, 1, 1, 1
+                            pos_hint : {"center_x" : .53, "center_y" : .5}
+                            font_name : "fonts/Poppins-Bold.ttf"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

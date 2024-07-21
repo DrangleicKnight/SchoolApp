@@ -1,0 +1,138 @@
+#: import genres add_books.genres
+#: import image_select add_books.image_select
+#: import book_select add_books.book_select
+#: import add_book add_books.add_book
+#: import load_books library.load_books
+
+MDScreen:
+    name : "add_books"
+    md_bg_color : 1, 1, 1, .1
+
+    canvas.before:
+        Color:
+            rgba : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    MDCard:
+        md_bg_color : 133/255, 0, 0, 1
+        elevation: 5
+        size_hint : 1, .18
+        radius : [0, 0, 15, 15]
+        pos_hint : {"center_x" : .5, "center_y" : .92}
+        MDFloatLayout:
+            FitImage:
+                size_hint : .15, .65
+                radius : [50]
+                pos_hint : {"center_x" : .1, "center_y" : .5}
+                source : "images/log.png"
+            MDLabel:
+                text: "Adnan's Institute of WitchCraft"
+                halign : "center"
+                font_size : "22sp"
+                pos_hint : {"center_x" : .56, "center_y" : .5}
+                font_name : "fonts/Poppins-Bold.ttf"
+                theme_text_color : "Custom"
+                text_color : 1, 1, 1, 1
+
+    MDIconButton:
+        icon : "arrow-u-left-top-bold"
+        icon_size : "32dp"
+        pos_hint : {"center_x" : .12, "center_y" : .765}
+        user_font_size : "30sp"
+        on_press : root.manager.current = "teachers_dashboard"
+
+    MDLabel:
+        text : "Add Books"
+        font_size : "25sp"
+        halign : "center"
+        pos_hint : {"center_x" : .74, "center_y" : .76}
+        font_name : "fonts/Poppins-Bold.ttf"
+
+    MDCard:
+        size_hint : .35, .36
+        pos_hint : {"center_x" : .25, "center_y" : .49}
+
+        FitImage:
+            id : book_image
+            size : self.size
+            pos : self.pos
+            source : "images/asoiaf.jpg"
+
+    MDTextField:
+        id : genre
+        size_hint : .27, .09
+        mode : "rectangle"
+        disabled : True
+        pos_hint : {"center_x" : .635, "center_y" : .63}
+        hint_text : "Genre"
+        font_name : "fonts/Poppins-SemiBold.ttf"
+        theme_text_color : "Custom"
+        text_color : "black"
+        line_color_normal : 0, 0, 0, 1
+        line_color_focus : 0, 0, 0, 1
+
+    MDIconButton:
+        id : genre_button
+        icon : "arrow-down-circle"
+        pos_hint : {"center_x" : .86, "center_y" : .62}
+        theme_text_color: "Custom"
+        user_font_size : "35sp"
+        on_press : genres(app)
+
+    MDTextField:
+        id : book_title
+        size_hint : .4, .09
+        mode : "rectangle"
+        pos_hint : {"center_x" : .7, "center_y" : .52}
+        hint_text : "Title"
+        font_name : "fonts/Poppins-SemiBold.ttf"
+        text_color_focus : "black"
+        hint_text_color_normal : "black"
+        hint_text_color_focus : "black"
+        line_color_normal : "black"
+        line_color_focus : "black"
+
+    MDTextField:
+        id : details
+        size_hint : .4, .13
+        mode : "rectangle"
+        pos_hint : {"center_x" : .7, "center_y" : .38}
+        hint_text : "Description"
+        font_name : "fonts/Poppins-SemiBold.ttf"
+        text_color_normal : "black"
+        hint_text_color_normal : "black"
+        hint_text_color_focus : "black"
+        line_color_normal : "black"
+        line_color_focus : "black"
+        multiline : True
+
+    MDRoundFlatButton:
+        text : "Select Picture"
+        size_hint : .34, .07
+        pos_hint : {"center_x" : .25, "center_y" : .25}
+        md_bg_color : 0, 0, 0, .8
+        on_press : image_select(app)
+
+    MDRoundFlatButton:
+        text : "Select Book"
+        size_hint : .37, .07
+        pos_hint : {"center_x" : .68, "center_y" : .25}
+        md_bg_color : 0, 0, 0, .8
+        on_press : book_select(app)
+
+    MDRaisedButton:
+        id : add_it
+        text : "Add Book"
+        size_hint : .5, .08
+        pos_hint : {"center_x" : .5, "center_y" : .1}
+        md_bg_color : 0, 0, 0, 1
+        theme_text_color : "Custom"
+        text_color : "orange"
+        disabled : True
+        on_press :
+            add_book(app, genre, book_title, details)
+            load_books(app)
+

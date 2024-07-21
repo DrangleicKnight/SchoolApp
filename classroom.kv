@@ -1,0 +1,116 @@
+#: import generate_students classroom.generate_students
+
+MDScreen:
+    name : "classroom"
+
+    canvas.before:
+        Color:
+            rgb : 1, 1, 1, .9
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/blackter.jpg"
+
+    GridLayout:
+        cols : 1
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 5
+            size_hint : 1, .17
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .92}
+            MDFloatLayout:
+                FitImage:
+                    size_hint : .15, .65
+                    radius : [50]
+                    pos_hint : {"center_x" : .1, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .55, "center_y" : .5}
+                    theme_text_color : "Custom"
+                    text_color : "white"
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+        ScrollView:
+            id : scroll
+            do_scroll_x : False
+            do_scroll_y : True
+            MDFloatLayout:
+                size_hint : 1, None
+                height : "1400dp"
+                MDIconButton:
+                    icon : "arrow-u-left-top-bold"
+                    icon_size : "35dp"
+                    pos_hint : {"center_x" : .12, "center_y" : .97}
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    on_press : root.manager.current = "homepage"
+
+                MDLabel:
+                    text : "Classroom"
+                    font_size : "25sp"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    halign : "center"
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    pos_hint : {"center_x" : .75, "center_y" : .97}
+
+                MDLabel:
+                    text : "Time Table"
+                    font_size : "20sp"
+                    halign : "center"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    pos_hint : {"center_x" : .2, "center_y" : .925}
+
+                MDCard:
+                    id : time_table
+                    size_hint : .9, .29
+                    md_bg_color : 1, 1, 1, .7
+                    pos_hint : {"center_x" : .5, "center_y" : .76}
+
+                MDLabel:
+                    text : "Students"
+                    font_size : "20sp"
+                    halign : "center"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    pos_hint : {"center_x" : .17, "center_y" : .59}
+
+                MDCard:
+                    size_hint : .9, .3
+                    pos_hint : {"center_x" : .5, "center_y" : .42}
+                    md_bg_color : 0, 0, 0, .3
+                    ScrollView:
+                        do_scroll_x : False
+                        do_scroll_y : True
+                        GridLayout:
+                            id : grid
+                            cols : 1
+                            spacing : [0, 5]
+                            size_hint : 1, None
+                            height : sum(students.height + 3 for students in self.children)
+
+                MDLabel:
+                    text : "Assignments"
+                    font_size : "20sp"
+                    halign : "center"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : "orange"
+                    pos_hint : {"center_x" : .21, "center_y" : .24}
+
+                MDCard:
+                    size_hint : .9, .2
+                    pos_hint : {"center_x" : .5, "center_y" : .12}
+                    md_bg_color : 1, 1, 1, .7
+                    ScrollView:
+                        do_scroll_x : False
+                        do_scroll_y : True
+                        MDList:
+                            id : listed

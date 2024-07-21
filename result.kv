@@ -1,0 +1,345 @@
+#: import check_if_empty_again result_maker.check_if_empty_again
+
+MDScreen:
+    name : "result"
+    md_bg_color : 1, 1, 1, 1
+
+    MDFloatLayout:
+        id : result_sheet
+        MDCard:
+            md_bg_color : 133/255, 0, 0, 1
+            elevation: 0
+            size_hint : 1, .18
+            radius : [0, 0, 15, 15]
+            pos_hint : {"center_x" : .5, "center_y" : .92}
+            MDFloatLayout:
+                FitImage:
+                    size_hint : .15, .65
+                    radius : [50]
+                    pos_hint : {"center_x" : .1, "center_y" : .5}
+                    source : "images/log.png"
+                MDLabel:
+                    text: "Adnan's Institute of WitchCraft"
+                    halign : "center"
+                    font_size : "22sp"
+                    pos_hint : {"center_x" : .56, "center_y" : .5}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    theme_text_color : "Custom"
+                    text_color : 1, 1, 1, 1
+
+        MDFloatLayout:
+            MDLabel:
+                text : "Adnan's Institute of WitchCraft"
+                font_size : " 17sp"
+                halign : "center"
+                font_name : "fonts/Poppins-Bold.ttf"
+                pos_hint : {"center_x" : .49, "center_y" : .78}
+            MDLabel:
+                text : "Kondhwa, Pune"
+                font_size : " 15sp"
+                halign : "center"
+                font_name : "fonts/Poppins-Bold.ttf"
+                pos_hint : {"center_x" : .49, "center_y" : .75}
+            FitImage:
+                size_hint : .13, .08
+                radius : [50]
+                pos_hint : {"center_x" : .13, "center_y" : .77}
+                source : "images/log.png"
+            FitImage:
+                size_hint : .13, .08
+                pos_hint : {"center_x" : .85, "center_y" : .77}
+                source : "images/qr.jpg"
+            MDLabel:
+                text : "--------------------------------------------------------"
+                font_size : " 15sp"
+                halign : "center"
+                font_name : "fonts/Poppins-Bold.ttf"
+                pos_hint : {"center_x" : .5, "center_y" : .71}
+
+            MDLabel:
+                id : roll
+                text : "Roll Number: 03"
+                font_size : "13sp"
+                pos_hint : {"center_x" : .55, "center_y" : .68}
+                font_name : "fonts/Poppins-SemiBold.ttf"
+            MDLabel:
+                id : name
+                text : "Name: Adnan Sayyed"
+                font_size : "13sp"
+                pos_hint : {"center_x" : .55, "center_y" : .65}
+                font_name : "fonts/Poppins-SemiBold.ttf"
+            MDLabel:
+                id : classed
+                text : "Class: SYMCA"
+                font_size : "13sp"
+                pos_hint : {"center_x" : .55, "center_y" : .62}
+                font_name : "fonts/Poppins-SemiBold.ttf"
+
+            MDFloatLayout:
+                pos_hint : {"center_x" : .5, "center_y" : .47}
+                MDLabel:
+                    text : "Sem"
+                    font_size : "14sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .1, "center_y" : .6}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : sem
+                    text : "1"
+                    font_size : "19sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .1, "center_y" : .54}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Subject Name"
+                    font_size : "14sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .3, "center_y" : .6}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Python Programming"
+                    font_size : "12sp"
+                    pos_hint : {"center_x" : .7, "center_y" : .54}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "DevOps"
+                    font_size : "12sp"
+                    pos_hint : {"center_x" : .7, "center_y" : .51}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Networking Technologies"
+                    font_size : "12sp"
+                    pos_hint : {"center_x" : .7, "center_y" : .48}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Android"
+                    font_size : "12sp"
+                    pos_hint : {"center_x" : .7, "center_y" : .45}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    text : "Operating System"
+                    font_size : "12sp"
+                    pos_hint : {"center_x" : .7, "center_y" : .42}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Marks Obtained"
+                    font_size : "14sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .76, "center_y" : .6}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Int"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .57}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : pyth_int
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .54}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : dev_int
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .51}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : network_int
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .48}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : android_int
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .45}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : os_int
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .65, "center_y" : .42}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Ext"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .57}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : pyth_ext
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .51}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : dev_ext
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .48}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : network_ext
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .45}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : android_ext
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .42}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : os_ext
+                    text : "35"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .75, "center_y" : .54}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    text : "Total"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .57}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : pyth_total
+                    text : "100"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .54}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : dev_total
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .51}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : network_total
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .48}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : android_total
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .45}
+                    font_name : "fonts/Poppins-Bold.ttf"
+                MDLabel:
+                    id : os_total
+                    text : "24"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .42}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    id : grand_total
+                    text : "Grand total out of 500"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .35}
+                MDLabel:
+                    id : total_obtained
+                    text : "1499"
+                    font_size : "13sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .85, "center_y" : .35}
+                    font_name : "fonts/Poppins-Bold.ttf"
+
+                MDLabel:
+                    id : percentage
+                    text : "Percentage : 89%"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .32}
+                MDLabel:
+                    id : result_date
+                    text : "Result Date: 24th August"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .29}
+
+                MDLabel:
+                    id : result
+                    text : "Result : FIRST CLASS"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .23}
+                MDLabel:
+                    id : attendance
+                    text : "Attendance for the Semester: 75%"
+                    font_name : "fonts/Poppins-Bold.ttf"
+                    font_size : "15sp"
+                    halign : "center"
+                    pos_hint : {"center_x" : .5, "center_y" : .195}
+
+            MDCard:
+                size_hint : 1, .13
+                md_bg_color : 0, 0, 0, 1
+                radius : [5, 5, 0, 0]
+                elevation : 0
+                pos_hint : {"center_x" : .5, "center_y" : .06}
+                MDFloatLayout:
+                    MDLabel:
+                        text : "These results published online are final and will be reflected on the physical copy"
+                        font_name : "fonts/Poppins-SemiBold.ttf"
+                        size_hint : .9, 1
+                        font_size : "14sp"
+                        theme_text_color : "Custom"
+                        text_color : "white"
+                        pos_hint : {"center_x" : .495, "center_y" : .51}
+
+    MDLabel:
+        text : "E-mail of Student : "
+        font_size : "12sp"
+        font_name : "fonts/Poppins-SemiBold.ttf"
+        theme_text_color : "Custom"
+        text_color : "white"
+        pos_hint : {"center_x" : .75, "center_y" : .87}
+    TextInput:
+        id : email_address
+        size_hint : .3, .034
+        font_size : "12sp"
+        pos_hint : {"center_x" : .645, "center_y" : .87}
+        multiline : False
+    MDIconButton:
+        icon : "arrow-u-left-top-bold"
+        icon_size : "20dp"
+        pos_hint : {"center_x" : .61, "center_y" : .65}
+        on_press : root.manager.current = "result_maker"
+    MDRoundFlatButton:
+        text : "Save Result"
+        md_bg_color : 133/255, 0, 0, .8
+        size_hint : .25, .05
+        pos_hint : {"center_x" : .77, "center_y" : .65}
+        on_press : check_if_empty_again(app, result_sheet, email_address)
+
+

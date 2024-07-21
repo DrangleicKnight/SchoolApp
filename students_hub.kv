@@ -1,0 +1,199 @@
+MDScreen:
+    name : "students_hub"
+    md_bg_color : 1, 1, 1, 1
+
+    canvas:
+        Color:
+            rgb : 1, 1, 1, 1
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "images/back.jpg"
+
+    MDCard:
+        md_bg_color : 133/255, 0, 0, 1
+        elevation: 5
+        size_hint : 1, .18
+        radius : [0, 0, 15, 15]
+        pos_hint : {"center_x" : .5, "center_y" : .92}
+        MDFloatLayout:
+            FitImage:
+                size_hint : .15, .65
+                radius : [50]
+                pos_hint : {"center_x" : .1, "center_y" : .5}
+                source : "images/log.png"
+            MDLabel:
+                text: "Adnan's Institute of WitchCraft"
+                halign : "center"
+                font_size : "22sp"
+                pos_hint : {"center_x" : .56, "center_y" : .5}
+                font_name : "fonts/Poppins-Bold.ttf"
+                theme_text_color : "Custom"
+                text_color : 1, 1, 1, 1
+
+    MDFloatLayout:
+        MDLabel:
+            text : "Students Hub"
+            font_size : "30dp"
+            halign : "center"
+            pos_hint : {"center_x" : .5, "center_y" : .78}
+            font_name : "fonts/Poppins-Bold.ttf"
+        MDLabel:
+            text : "Check out all the activities carried out \nby our students!"
+            font_size : "15dp"
+            halign : "center"
+            pos_hint : {"center_x" : .5, "center_y" : .72}
+            font_name : "fonts/Poppins-Bold.ttf"
+
+
+        ScrollView:
+            do_scroll_y : True
+            pos_hint : {"center_x" : .5, "center_y" : .41}
+            size_hint : 1, .55
+            GridLayout:
+                cols : 1
+                size_hint : 1, None
+                height : sum(child.height for child in self.children) * 4
+                padding : [35, 5]
+                spacing : [0, 15]
+                MDCard:
+                    size_hint : .7, None
+                    height : "300dp"
+                    md_bg_color : 0, 0, 0, 1
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "adnansayyed"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            pos_hint : {"center_x" : .53, "center_y" : .95}
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                        FitImage:
+                            size_hint : .97, .73
+                            pos_hint : {"center_x" : .5, "center_y" : .525}
+                            radius : [5]
+                            source : "images/students/hub/1.jpeg"
+                        MDLabel:
+                            text : "Some days are just better when you're surrounded by a crowd"
+                            font_size : "12sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            size_hint : .95, 1
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .5, "center_y" : .11}
+
+                MDCard:
+                    size_hint : .7, None
+                    height : "300dp"
+                    md_bg_color : 0, 0, 0, 1
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "adnansayyed"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .53, "center_y" : .95}
+                        FitImage:
+                            size_hint : .97, .73
+                            pos_hint : {"center_x" : .5, "center_y" : .525}
+                            radius : [5]
+                            source : "images/students/hub/2.jpeg"
+                        MDLabel:
+                            text : "The first day of college, such a great beginning!"
+                            font_size : "12sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            size_hint : .95, 1
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .5, "center_y" : .11}
+
+                MDCard:
+                    size_hint : .7, None
+                    height : "300dp"
+                    md_bg_color : 0, 0, 0, 1
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "adnansayyed"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .53, "center_y" : .95}
+                        FitImage:
+                            size_hint : .97, .73
+                            pos_hint : {"center_x" : .5, "center_y" : .525}
+                            radius : [5]
+                            source : "images/students/hub/3.jpeg"
+                        MDLabel:
+                            text : "The days during the preparations for Happenings 2022!"
+                            font_size : "12sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            size_hint : .95, 1
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .5, "center_y" : .11}
+
+                MDCard:
+                    size_hint : .7, None
+                    height : "300dp"
+                    md_bg_color : 0, 0, 0, 1
+                    MDFloatLayout:
+                        MDLabel:
+                            text : "adnansayyed"
+                            font_size : "13sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .53, "center_y" : .95}
+                        FitImage:
+                            size_hint : .97, .73
+                            pos_hint : {"center_x" : .5, "center_y" : .525}
+                            radius : [5]
+                            source : "images/students/hub/6.jpeg"
+                        MDLabel:
+                            text : "Maybe expanding the group was a bad idea?"
+                            font_size : "12sp"
+                            font_name : "fonts/Poppins-SemiBold.ttf"
+                            size_hint : .95, 1
+                            theme_text_color : "Custom"
+                            text_color : "white"
+                            pos_hint : {"center_x" : .5, "center_y" : .11}
+
+    MDCard:
+        size_hint : 1, .1
+        pos_hint : {"center_x" : .5, "center_y" : .05}
+        radius : [15, 15, 0, 0]
+        elevation : 4
+        md_bg_color : 133/255, 0, 0, 1.9
+        GridLayout:
+            cols : 5
+            spacing : [50, 0]
+            padding : [30, 0]
+            MDIconButton:
+                icon : "home"
+                icon_size : "30dp"
+                theme_text_color : "Custom"
+                text_color : "orange"
+                on_press : root.manager.current = "homepage"
+            MDIconButton:
+                icon : "post"
+                icon_size : "30dp"
+                theme_text_color : "Custom"
+                text_color : "orange"
+            MDIconButton:
+                icon : "magnify"
+                icon_size : "30dp"
+                theme_text_color : "Custom"
+                text_color : "orange"
+            MDIconButton:
+                icon : "puzzle-heart-outline"
+                icon_size : "30dp"
+                theme_text_color : "Custom"
+                text_color : "orange"
+            MDIconButton:
+                icon : "clipboard"
+                icon_size : "30dp"
+                theme_text_color : "Custom"
+                text_color : "orange"
+
