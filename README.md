@@ -8,7 +8,7 @@ Below are the core modules present within the application
 ## Facial Recognition (OpenCV)
 - The ability to mark a student's attendance using Facial Recognition
 - The attendance is marked for the day in an XL sheet.
-![attendance](https://github.com/user-attachments/assets/8ec92c25-3c32-43dd-a6c9-5b16e6b3d673)   ![AttendanceSheet](https://github.com/user-attachments/assets/bc0887a1-27cb-4e91-ab6d-b5aa7b7f6cec)
+![attendance](https://github.com/user-attachments/assets/8ec92c25-3c32-43dd-a6c9-5b16e6b3d673 | width=100 | height=100)   ![AttendanceSheet](https://github.com/user-attachments/assets/bc0887a1-27cb-4e91-ab6d-b5aa7b7f6cec)
 
 ## PDF to Images Converter
 - This module converts PDFs to images so that the students can read books from the app itself
