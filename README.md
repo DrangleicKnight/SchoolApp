@@ -9,7 +9,7 @@ Below are the core modules present within the application
 - The ability to mark a student's attendance using Facial Recognition
 - The attendance is marked for the day in an XL sheet.
   
- <pre><img src="images/screens/attendance.PNG" width="300" height = "600">  <img src="images/screens/AttendanceSheet.PNG" width="500" height = "300"></pre>
+ <pre><img src="images/screens/attendance.PNG" width="400" height = "600">  <img src="images/screens/AttendanceSheet.PNG" width="600" height = "300"></pre>
 
 ## PDF to Images Converter
 - This module converts PDFs to images so that the students can read books from the app itself
