@@ -14,7 +14,8 @@ Below are the core modules present within the application
 ## PDF to Images Converter
 - This module converts PDFs to images so that the students can read books from the app itself
 - It is done by taking each page of the pdf and adding it to a card in the carousel.
-![library](https://github.com/user-attachments/assets/3c41fc38-f3fa-4a80-a186-de60fd1561d2)   ![LibBook](https://github.com/user-attachments/assets/6cb0c16b-ef94-49d0-89c2-f3d0a24eff62)
+
+ <pre><img src="images/screens/library.PNG" width="400" height = "600">   <img src="images/screens/LibBook.PNG" width="400" height = "600"></pre>
 
 ##  Add Students & Generate I-Card
 - Students can be added in the database followed by an I-card being generated and sent via mail
