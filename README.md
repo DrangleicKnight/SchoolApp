@@ -1,4 +1,4 @@
-### School App - with Facial Recognition
+ ### School App - with Facial Recognition
 
 This application was a part of my Final Year's project.
 Took me around 1.5 Months to complete this project.
@@ -36,13 +36,12 @@ Below are the core modules present within the application
 
 ## HomePage
 
-<pre><img src="images/screens/homepage.PNG" width="400" height = "600">   <img src="images/screens/homepage2.PNG" width="400" height = "600"></pre>
+ <pre><img src="images/screens/homepage.PNG" width="400" height = "600">   <img src="images/screens/homepage2.PNG" width="400" height = "600"></pre>
 
 
 ### Other Modules
 
-<pre><img src="images/screens/appoint_teachers.PNG" width="400" height = "600">  <img src="images/screens/admission_form.PNG" width="400" height = "600">  <img src="images/screens/update_student.PNG" width="400" height = "600"></pre>
-<pre><img src="images/screens/tboard.PNG" width="400" height = "600">   <img src="images/screens/Login.PNG" width="400" height = "600"></pre>
+ <pre><img src="images/screens/Login.PNG" width="400" height = "600">  <img src="images/screens/tboard.PNG" width="400" height = "600">  <img src="images/screens/update_student.PNG" width="400" height = "600">  <img src="images/screens/admission_form.PNG" width="400" height = "600">   <img src="images/screens/appoint_teachers.PNG" width="400" height = "600"></pre>
 
 
 ### How to Run
